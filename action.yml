@@ -1,0 +1,17 @@
+# action.yml
+name: "Shell with output"
+description: "runs a shell command and captures the output"
+inputs:
+  command:
+    description: "Command to run"
+    required: true
+outputs:
+  stdout:
+    description: "stdout"
+  stderr:
+    description: "stderr"
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - ${{ inputs.command }}
